@@ -38,6 +38,17 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->password;
 	}
+    
+	/**
+	 * Set the password for the user.
+	 *
+	 * @param string
+	 */
+	public function setAuthPassword($password)
+	{
+		$this->password = $password;
+        $this->save();
+	}
 
 	/**
 	 * Get the e-mail address where password reminders are sent.
